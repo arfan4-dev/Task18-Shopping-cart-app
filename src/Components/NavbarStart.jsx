@@ -1,0 +1,27 @@
+import React from 'react'
+import logo from '../assests/image.png'
+import { NavLink } from 'react-router-dom'
+import { useSelector } from 'react-redux'
+import {BsArrowRightSquareFill} from 'react-icons/bs'
+const NavbarStart = () => {
+  const { cart } = useSelector((state) => state)
+  return (
+    <div >
+      <nav className='flex justify-between items-center h-20 max-w-6xl mx-auto'>
+        <div to='#'>
+          <div className='ml-5'>
+            <img src={logo} className='h-20' alt='' />
+          </div>
+        </div>
+
+        <div className='flex items-center font-medium text-slate-100 mr-5 space-x-6 '>
+          <NavLink className='flex gap-x-3 items-center  border border-white rounded-xl p-2' to='/login'> <span className=' ' ><p>Login</p></span> <span><BsArrowRightSquareFill/></span> </NavLink>
+         
+        </div>
+      </nav>
+    </div>
+  )
+}
+
+export default NavbarStart
+
